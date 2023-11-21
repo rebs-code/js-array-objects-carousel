@@ -56,16 +56,27 @@ thumbnails.appendChild(next);
 let currentSlide = 0; //questa è la prima immagine con indice 0 nell'array
 
 for (let i = 0; i < images.length; i++) {
+  //appendo le immagini
   const item = document.createElement("div");
   item.classList.add("item");
   if (i === currentSlide) {
     item.classList.add("active");
   }
-  const img = document.createElement("img");
-  img.src = `/img/0${i + 1}.jpg`;
-  img.alt = "image 0${i}";
-  item.appendChild(img);
+  // appendo le immagini come background
+  item.style.backgroundImage = `url(/img/0${i + 1}.jpg)`;
+  item.style.backgroundSize = "cover";
+  item.style.backgroundPosition = "center";
+  item.style.backgroundRepeat = "no-repeat";
+  // Append the item to the items container
   items.appendChild(item);
+  //appendo i titoli
+  const title = document.createElement("h2");
+  title.textContent = images[i].title;
+  item.appendChild(title);
+  const caption = document.createElement("p");
+  caption.textContent = images[i].caption;
+  item.appendChild(caption);
+  //appendo i caption
   // creo un elemento img per ogni singolo thumbnail
   const thumbnail = document.createElement("img");
   //give class opacity to all thumbnails

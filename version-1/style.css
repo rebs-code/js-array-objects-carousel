@@ -33,6 +33,16 @@
     object-fit: cover;
 }
 
+.item h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+.item p {
+    color: white;
+    font-size: 1.5rem;
+}
+
 .item.active {
     display: block;
 }
