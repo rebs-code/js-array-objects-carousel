@@ -172,7 +172,26 @@ function autoPlay() {
     allThumbnails[currentSlide].classList.remove("opacity");
   };
 
-//   setInterval(autoPlay, 3000);
+//funzione reverse
+function reversePlay() {
+   // if the current slide is not the first one, remove the class "active" from the current slide and add it to the previous one.
+   if (currentSlide > 0) {
+    allItems[currentSlide].classList.remove("active");
+    currentSlide--;
+    allItems[currentSlide].classList.add("active");
+  } else {
+    // if the current slide is the first one, remove the class "active" from the current slide and add it to the last one.
+    allItems[currentSlide].classList.remove("active");
+    currentSlide = allItems.length - 1;
+    allItems[currentSlide].classList.add("active");
+  }
+  //the thumbnail with the same source image as the current slide has class opacity removed
+  const allThumbnails = document.querySelectorAll(".thumbnails img");
+  for (let i = 0; i < allThumbnails.length; i++) {
+    allThumbnails[i].classList.add("opacity");
+  }
+  allThumbnails[currentSlide].classList.remove("opacity");
+}
 
 //bottone per autoplay
 const start = document.getElementById("start");
@@ -188,5 +207,14 @@ start.addEventListener("click", function () {
 const stop = document.getElementById("stop");
 stop.addEventListener("click", function () {
     clearInterval(interval); 
+    interval = null;
+});
+
+//bottone per reverse
+const reverse = document.getElementById("reverse");
+reverse.addEventListener("click", function () {
+  if (!interval) {
+    interval = setInterval(reversePlay, 3000);
+  } 
 });
 
