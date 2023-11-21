@@ -2,11 +2,31 @@
 
 //create array with img
 const images = [
-  "img/01.jpg",
-  "img/02.jpg",
-  "img/03.jpg",
-  "img/04.jpg",
-  "img/05.jpg",
+  {
+    title: "Lorem Ipsum 1",
+    caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    picture: "img/01.jpg",
+  },
+  {
+    title: "Lorem Ipsum 2",
+    caption: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    picture: "img/02.jpg",
+  },
+  {
+    title: "Lorem Ipsum 3",
+    caption: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    picture: "img/03.jpg",
+  },
+  {
+    title: "Lorem Ipsum 4",
+    caption: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    picture: "img/04.jpg",
+  },
+  {
+    title: "Lorem Ipsum 5",
+    caption: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    picture: "img/05.jpg",
+  },
 ];
 // create container
 const container = document.createElement("div");
@@ -148,7 +168,9 @@ const start = document.getElementById("start");
 let interval;
 
 start.addEventListener("click", function () {
+  if (!interval) {
     interval = setInterval(autoPlay, 3000);
+  }
 });
 
 //bottone per stoppare autoplay
