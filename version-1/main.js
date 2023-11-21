@@ -24,7 +24,7 @@ const images = [
   },
   {
     title: "Lorem Ipsum 5",
-    caption: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    caption: "Excepteur sint occaecat cupidatat non proident",
     picture: "img/05.jpg",
   },
 ];

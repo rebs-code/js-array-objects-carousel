@@ -16,7 +16,6 @@
 /* items */
 
 .items {
-    position: relative;
     width: 700px;
     height: 300px;
 }
@@ -25,6 +24,10 @@
     height: 100%;
     display: none;
     position: relative;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    text-align: right;
 }
 
 .item img {
@@ -36,15 +39,19 @@
 .item h2 {
     color: white;
     font-size: 2rem;
+    padding: 1rem;
 }
 
 .item p {
     color: white;
     font-size: 1.5rem;
+    padding-top: 0;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
 }
 
 .item.active {
-    display: block;
+    display: flex;
 }
 
 /* thumbnail */
